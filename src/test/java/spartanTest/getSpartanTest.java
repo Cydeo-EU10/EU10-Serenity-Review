@@ -1,14 +1,11 @@
 package spartanTest;
 
 import io.restassured.http.*;
-import io.restassured.response.*;
-import jxl.common.*;
 import net.serenitybdd.junit5.*;
 import net.serenitybdd.rest.*;
 import org.junit.jupiter.api.*;
 
 import static io.restassured.RestAssured.baseURI;
-import static io.restassured.RestAssured.*;
 import static net.serenitybdd.rest.SerenityRest.given;
 import static net.serenitybdd.rest.SerenityRest.*;
 import static org.hamcrest.Matchers.*;
@@ -29,6 +26,14 @@ public class getSpartanTest {
                 .then().statusCode(200);
 
         Ensure.that("Status code validation", validatableResponse -> validatableResponse.statusCode(200));
+        /*
+        if statement
+        TestNg
+        Junit
+        Hamcrest mathcers
+        serenity way of validation
+         */
+        Ensure.that("Content type validation", vR -> vR.contentType(ContentType.JSON));
 
 
 
